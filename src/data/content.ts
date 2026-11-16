@@ -7,7 +7,6 @@
  */
 import type { L } from '../i18n'
 
-import logo from '../assets/img/logo.webp'
 import coTeriun from '../assets/img/co-teriun.webp'
 import coGeneration from '../assets/img/co-generation.webp'
 import coImmersive from '../assets/img/co-immersive.webp'
@@ -27,7 +26,6 @@ import imgKiddo from '../assets/img/project-dont-stop-kiddo.webp'
 
 export const profile = {
   name: 'Mauricio Castro',
-  logo,
   // TODO(mauricio): update role/headline if your title changed since 2024.
   role: { en: 'Game Programmer · Unity Developer', es: 'Game Programmer · Desarrollador Unity' } as L,
   headline: {

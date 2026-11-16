@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { profile, ui } from '../data/content'
 import { useLang } from '../i18n'
-import { CloseIcon, MenuIcon } from './Icons'
+import { CloseIcon, Logo, MenuIcon } from './Icons'
 
 const links = [
   ['about', ui.nav.about],
@@ -22,7 +22,7 @@ export default function Header() {
       </a>
       <div className="container-x flex h-16 items-center justify-between">
         <a href="#top" className="flex items-center gap-3 font-display font-bold">
-          <img src={profile.logo} alt="" width={36} height={30} className="h-8 w-auto" />
+          <Logo />
           <span>{profile.name}</span>
         </a>
 

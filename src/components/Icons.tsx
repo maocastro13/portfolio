@@ -46,3 +46,17 @@ export const CloseIcon = (p: P) => (
     <path d="M6 6l12 12M18 6 6 18" />
   </svg>
 )
+
+/** Site mark: an "M" on the accent gradient. Same artwork as public/favicon.svg. */
+export const Logo = (p: P) => (
+  <svg width={32} height={32} viewBox="0 0 64 64" aria-hidden {...p}>
+    <defs>
+      <linearGradient id="logo-g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stopColor="#a78bfa" />
+        <stop offset="1" stopColor="#22d3ee" />
+      </linearGradient>
+    </defs>
+    <rect width="64" height="64" rx="16" fill="url(#logo-g)" />
+    <path d="M18 45V20l14 16 14-16v25" fill="none" stroke="#09090f" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+)
