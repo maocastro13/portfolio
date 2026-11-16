@@ -2,6 +2,9 @@
 
 React 19 · TypeScript · Vite · Tailwind CSS 4 · react-three-fiber. Bilingual (EN/ES).
 
+The hero is a small playable game (`src/game/`): a code-built low-poly character, a state machine
+(idle / run / jump / fall) and a live debug view. No 3D model files are downloaded.
+
 ## Editing content
 
 Everything shown on the site lives in [`src/data/content.ts`](src/data/content.ts).

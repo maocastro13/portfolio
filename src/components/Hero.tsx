@@ -1,12 +1,11 @@
-import { Component, lazy, Suspense, useCallback, useEffect, useState, type ReactNode } from 'react'
+import { Component, lazy, Suspense, useEffect, useState, type ReactNode } from 'react'
 import { profile, stats, ui } from '../data/content'
 import { useLang } from '../i18n'
 import { ArrowIcon, DownloadIcon, GitHubIcon, LinkedInIcon } from './Icons'
 
-const AvatarCanvas = lazy(() => import('./AvatarCanvas'))
-const ANIMS = ['saludo', 'backflip', 'burpee']
+const HeroGame = lazy(() => import('../game/HeroGame'))
 
-/** If WebGL is unavailable the avatar simply does not render. */
+/** If WebGL is unavailable the game simply does not render. */
 class Safe3D extends Component<{ children: ReactNode }, { failed: boolean }> {
   state = { failed: false }
   static getDerivedStateFromError() {
@@ -20,8 +19,6 @@ class Safe3D extends Component<{ children: ReactNode }, { failed: boolean }> {
 export default function Hero() {
   const { t } = useLang()
   const [ready, setReady] = useState(false)
-  const [anim, setAnim] = useState(ANIMS[0])
-  const backToIdle = useCallback(() => setAnim(ANIMS[0]), [])
   const [pre, mark, post] = t(profile.headline)
 
   // Load the 3D bundle only once the page is interactive.
@@ -60,24 +57,10 @@ export default function Hero() {
         </div>
 
         <div className="order-first lg:order-none">
-          <div className="relative mx-auto h-[320px] max-w-sm sm:h-[400px] lg:h-[520px] lg:max-w-none">
+          <div className="relative mx-auto h-[340px] max-w-md sm:h-[420px] lg:h-[520px] lg:max-w-none">
             <Safe3D>
-              <Suspense fallback={null}>{ready && <AvatarCanvas anim={anim} onDone={backToIdle} />}</Suspense>
+              <Suspense fallback={null}>{ready && <HeroGame />}</Suspense>
             </Safe3D>
-          </div>
-          <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
-            <span className="text-xs text-mute">{t(ui.hero.avatarHint)}:</span>
-            {ANIMS.map((a) => (
-              <button
-                key={a}
-                type="button"
-                onClick={() => setAnim(a)}
-                aria-pressed={anim === a}
-                className={`chip transition-colors hover:border-accent hover:text-ink ${anim === a ? 'border-accent! text-ink!' : ''}`}
-              >
-                {t(ui.hero.anims[a])}
-              </button>
-            ))}
           </div>
         </div>
       </div>

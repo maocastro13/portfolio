@@ -1,9 +1,11 @@
 import { experience, profile, projects, skills, specialties, testimonials, ui } from '../data/content'
 import { useLang } from '../i18n'
+import { PICKUP_COLORS, useCollected } from '../game/store'
 import { GitHubIcon, LinkedInIcon, PlayIcon } from './Icons'
 
 export function About() {
   const { t } = useLang()
+  const collected = useCollected()
   return (
     <section id="about" className="section">
       <div className="container-x">
@@ -21,8 +23,19 @@ export function About() {
 
         <ul data-reveal className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {specialties.map((s, i) => (
-            <li key={s.title.en} className="card p-6">
-              <span className="font-display text-sm text-accent">0{i + 1}</span>
+            <li
+              key={s.title.en}
+              className="card p-6 transition-[border-color,box-shadow] duration-500"
+              style={collected[i] ? { borderColor: PICKUP_COLORS[i], boxShadow: `0 0 28px -10px ${PICKUP_COLORS[i]}` } : undefined}
+            >
+              <span className="flex items-center justify-between font-display text-sm text-accent">
+                0{i + 1}
+                {collected[i] && (
+                  <span className="text-xs" style={{ color: PICKUP_COLORS[i] }}>
+                    ✓ {t(ui.game.unlocked)}
+                  </span>
+                )}
+              </span>
               <h3 className="font-display mt-3 text-lg font-semibold">{t(s.title)}</h3>
               <p className="mt-2 text-sm leading-relaxed text-mute">{t(s.text)}</p>
             </li>

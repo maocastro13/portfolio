@@ -387,12 +387,17 @@ export const ui = {
   hero: {
     cta: { en: 'See my work', es: 'Ver proyectos' },
     cv: { en: 'Download CV', es: 'Descargar CV' },
-    avatarHint: { en: 'Make me move', es: 'Hazme mover' },
-    anims: {
-      saludo: { en: 'Wave', es: 'Saludar' },
-      backflip: { en: 'Backflip', es: 'Voltereta' },
-      burpee: { en: 'Burpee', es: 'Burpee' },
-    } as Record<string, L>,
+  },
+  game: {
+    label: { en: 'Mini-game: move the character and collect the four skills', es: 'Minijuego: mueve al personaje y recoge las cuatro habilidades' },
+    hintKeys: { en: 'Click to play · WASD / arrows to move · Space to jump', es: 'Haz clic para jugar · WASD / flechas para moverte · Espacio para saltar' },
+    hintPlaying: { en: 'Collect the four skills', es: 'Recoge las cuatro habilidades' },
+    hintTouch: { en: 'Use the joystick to collect the four skills', es: 'Usa el joystick para recoger las cuatro habilidades' },
+    jump: { en: 'Jump', es: 'Saltar' },
+    unlocked: { en: 'Unlocked', es: 'Desbloqueado' },
+    done: { en: 'All skills unlocked!', es: '¡Todas las habilidades desbloqueadas!' },
+    again: { en: 'Play again', es: 'Jugar de nuevo' },
+    debug: { en: 'Debug view', es: 'Vista debug' },
   },
   about: { eyebrow: { en: 'About', es: 'Sobre mí' }, title: { en: 'Engineer first, gamer always.', es: 'Ingeniero primero, gamer siempre.' } },
   skills: { en: 'Toolbox', es: 'Herramientas' },
