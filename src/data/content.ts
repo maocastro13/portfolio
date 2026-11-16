@@ -372,6 +372,8 @@ export const testimonials: { quote: L; name: string; role: string; image: string
 
 /** Interface strings. */
 export const ui = {
+  /** Browser tab title. */
+  pageTitle: { en: 'Mauricio Castro · Game Programmer', es: 'Mauricio Castro · Programador de Videojuegos' },
   nav: {
     about: { en: 'About', es: 'Sobre mí' },
     work: { en: 'Work', es: 'Proyectos' },

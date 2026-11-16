@@ -47,7 +47,7 @@ export const CloseIcon = (p: P) => (
   </svg>
 )
 
-/** Site mark: an "M" on the accent gradient. Same artwork as public/favicon.svg. */
+/** Site mark: an "M" on the accent gradient. Same artwork as public/icon.svg. */
 export const Logo = (p: P) => (
   <svg width={32} height={32} viewBox="0 0 64 64" aria-hidden {...p}>
     <defs>

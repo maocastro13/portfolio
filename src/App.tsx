@@ -29,6 +29,10 @@ function useReveal() {
 export default function App() {
   const { t } = useLang()
   useReveal()
+  const title = t(ui.pageTitle)
+  useEffect(() => {
+    document.title = title
+  }, [title])
 
   return (
     <>
